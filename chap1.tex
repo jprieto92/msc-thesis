@@ -1,0 +1,78 @@
+\lhead[\thepage]{CAPÍTULO \thechapter. INTRODUCCIÓN}
+\chead[]{}
+\rhead[Patrones de programación paralelos de alto nivel en arquitecturas de memoria distribuida\leftmark]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\lfoot[]{}
+\cfoot[]{}
+\rfoot[]{}
+\renewcommand{\footrulewidth}{0pt}
+
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{Introducción}
+\label{ch:introduccion}
+\markboth{}{INTRODUCCIÓN}
+
+Este primer capítulo presenta brevemente el proyecto, incluyendo sus características principales y motivación (Sección \ref{sec:motivacion}), los objetivos del proyecto (Sección \ref{sec:motivacion}), y toda la estructura del documento (Sección \ref{sec:estructura_documento}).
+
+\section{Motivación}
+\label{sec:motivacion}
+
+Numerosos experimentos científicos, que van desde aceleradores de partículas hasta sensores ambientales, están generando en la actualidad grandes volúmenes de transmisión de datos que deben procesarse casi en tiempo real. Para habilitar la próxima generación de descubrimientos científicos, se han identificado varios desafíos en el área de la computación de alto rendimiento (\acrshort{hpc}) para manejar las altas tasas de rendimiento y las demandas de baja latencia de las aplicaciones de procesamiento de flujo de datos (\acrshort{dasp}) \cite{stream2016}. Estos desafíos, previstos para llenar el vacío en la gestión y el procesamiento de la transmisión de datos, se centran en la búsqueda de algoritmos de transmisión escalables y eficientes, modelos de programación, lenguajes y sistemas en tiempo de ejecución para este tipo de aplicaciones. Para lograr estos objetivos, se requieren esfuerzos considerables en el ámbito del software de \acrshort{hpc} para \acrshort{dasp} que permitan afrontar el crecimiento incesante de los datos de streaming \cite{Kamburugamuve2016}.
+
+\vspace{0.2cm}
+
+Para lograr el objetivo de la escalabilidad, se requieren múltiples plataformas multi-core de memoria compartida para aumentar el rendimiento en este tipo de aplicaciones. En este sentido, los modelos de programación de facto para plataformas de memoria compartida y distribuida son, respectivamente, las interfaces \acrshort{mpi} \cite{MPI:2014} y \acrshort{openmp} \cite{OpenMP:2001}, que se pueden usar en conjunto para permitir el paralelismo híbrido. Independientemente de su eficiencia, ambas interfaces ofrecen abstracciones de bajo nivel y exigen una experiencia considerable en los dominios de aplicación y sistema para ajustar la aplicación objetivo \cite{Cappello:2000}. 
+
+\vspace{0.2cm}
+
+Una opción que permite reducir esta carga es la utilización de modelos de programación basados en patrones, que encapsulan aspectos algorítmicos siguiendo un enfoque de bloques de construcción. En general, los patrones paralelos ofrecen una alternativa para implementar soluciones robustas, legibles y portátiles, ocultando las complejidades relacionadas con los mecanismos de concurrencia, sincronizaciones o intercambio de datos \cite{McCool:2012}. Es por ello, que algunas interfaces y bibliotecas basadas en patrones del estado de la cuestión, como por ejemplo FastFlow \cite{Fastflow}, Muesli \cite{RePEc:zbw:ercisw:7} o SkePU \cite{Ernstsson2018} ya admiten clústeres de máquinas multi-core y utilizan algoritmos de programación para mejorar el balanceo de carga entre nodos.
+
+
+\section{Objetivos}
+\label{sec:objetivos}
+
+Para facilitar el camino hacia los modelos de programación escalables de \acrshort{hpc} para \acrshort{dasp}, en este trabajo ampliamos la interfaz genérica y reutilizable de patrones paralelos (\acrshort{grppi} \cite{grppi-github}) de C ++ con un nuevo back-end \acrshort{mpi}, que permite la ejecución de algunos patrones de \emph{streaming} en plataformas distribuidas.
+
+\vspace{0.2cm}
+
+Básicamente, \acrshort{grppi} acomoda una capa unificada de patrones paralelos genéricos y reutilizables sobre los entornos de ejecución existentes y los frameworks basados en patrones. Esta capa permite a los usuarios hacer que sus aplicaciones sean independientes del framework de programación paralelo utilizado debajo, proporcionando así códigos portátiles y legibles. 
+
+\vspace{0.2cm}
+
+Con esta primera versión del back-end de \acrshort{mpi}, se admite la ejecución distribuida e híbrida de los patrones de \emph{streaming} \emph{Pipeline} y \emph{Farm}. Para admitir escenarios híbridos, el back-end combina una política de ejecución de memoria compartida intra-nodo que, si es necesario, se utiliza para ejecutar múltiples operadores de \emph{Pipeline} o \emph{Farm} dentro de un proceso \acrshort{mpi} usando \acrshort{openmp}, C++ Threads o Intel \acrshort{tbb}, teniendo como objetivos en este trabajo:
+
+\begin {itemize}
+\item \textbf{O1}: Presentar una nueva política de ejecución de \acrshort{grppi}-MPI para entornos distribuidos e híbridos para los patrones paralelos \emph{Pipeline} y \emph{Farm}.
+\item \textbf{O2}: Describir el diseño de la interfaz \acrshort{grppi} y las políticas internas de \acrshort{mpi} para permitir la ejecución distribuida e híbrida de aplicaciones \acrshort{dasp}.
+\item \textbf{O3}: Presentar un nuevo operador para patrones de \emph{streaming} que, como un contenedor, permite a los usuarios reemplazar la política de ejecución predeterminada de un patrón.
+\item \textbf{O4}: Analizar la usabilidad del patrón en términos de líneas de código y complejidad ciclomática, y realizando una comparación \emph{side-by-side} de ambas interfaces de programación \acrshort{grppi} y \acrshort{mpi}.
+\item \textbf{O5}: Evaluar los patrones distribuidos \emph{Pipeline} y \emph{Farm} de \emph{streaming} desde los puntos de vista de usabilidad y rendimiento usando una aplicación que renderiza frames de Mandelbrot. Esta evaluación se llevará a cabo bajo diferentes configuraciones híbridas.
+\end {itemize}
+
+\vspace{0.2cm}
+
+
+\section{Estructura del documento}
+\label{sec:estructura_documento}
+
+El documento está dividido en los siguientes capítulos:
+
+\begin{itemize}
+    \item Capítulo \ref{ch:introduccion}, \textit{\nameref{ch:introduccion}}, presenta una breve descripción del contenido del documento. También incluye la motivación y los objetivos del proyecto.
+    \item Capítulo \ref{ch:estado_de_la_cuestion}, \textit{\nameref{ch:estado_de_la_cuestion}}, presenta el trabajo relacionado, incluyendo una descripción de los diferentes paradigmas de programación paralela y sus frameworks.
+    \item Capítulo \ref{ch:patrones_paralelismo}, \textit{\nameref{ch:patrones_paralelismo}}, introduce los patrones de paralelismo, describiéndolos y realizando su formalización matemática; y presenta la interfaz genérica y reutilizable de patrones paralelos (\acrshort{grppi}).
+    \item Capítulo \ref{ch:interfaz_patrones_memoria_distribuida}, \textit{\nameref{ch:interfaz_patrones_memoria_distribuida}}, presenta la nueva \acrshort{grppi}-MPI para entornos distribuidos e híbridos para los patrones paralelos \emph{Pipeline} y \emph{Farm}, explicando la nueva política de ejecución.
+    \item Capítulo \ref{ch:evaluacion_experimental}, \textit{\nameref{ch:evaluacion_experimental}}, presenta el análisis y evaluación de la usabilidad y rendimiento de los patrones en \acrshort{grppi}-MPI. 
+    \item Capítulo \ref{ch:planificacion_proyecto}, \textit{\nameref{ch:planificacion_proyecto}}, presenta los conceptos relacionados con la planificación del proyecto.
+    \item Capítulo \ref{ch:conclusiones_trabajo_futuro}, \textit{\nameref{ch:conclusiones_trabajo_futuro}}, incluye las contribuciones y los resultados del proyecto, explicando los principales hallazgos del proyecto y presentando el trabajo futuro.
+\end{itemize}
+
+\afterpage{\blankpage} % blank page
+
+

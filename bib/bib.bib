@@ -1,0 +1,690 @@
+%%%%%%%%%%%
+%                          %
+% BIBLIOGRAPHY %
+%                          %
+%%%%%%%%%%%
+
+% http://ccm.ucdenver.edu/wiki/How_to_write_BibTeX_files
+
+%%%%%%%%%
+% Introduction %
+%%%%%%%%%
+
+@misc{grppi-github,
+    author = {Computer Architecture, Communications and Systems (ARCOS)},
+    title = {{Generic Reusable Parallel Pattern Interface - \textsc{GrPPI}}},
+    howpublished = {\url{https://github.com/arcosuc3m/grppi/}},
+    note = {Online; accessed 5 May 2018},
+    year = {2018},
+}
+
+@techreport{stream2016,
+title = {STREAM2016: Streaming Requirements, Experience, Applications and Middleware Workshop},
+author = {Fox, Geoffrey and Jha, Shantenu and Ramakrishnan, Lavanya},
+doi = {10.2172/1344785},
+journal = {},
+number = {},
+volume = {},
+institution = {Lawrence Berkeley National Laboratory},
+place = {United States},
+year = {2016},
+month = {10}
+}
+
+@TechReport{RePEc:zbw:ercisw:7,
+  author={Ciechanowicz, Philipp and Poldner, Michael and Kuchen, Herbert},
+  title={{The Münster Skeleton Library Muesli: A comprehensive overview}},
+  year={2009},
+  month={},
+  institution={University of M\"unster, European Research Center for Information Systems (ERCIS)},
+  type={ERCIS Working Papers},
+  url={https://ideas.repec.org/p/zbw/ercisw/7.html},
+  number={7},
+  abstract={No abstract is available for this item.},
+  keywords={},
+  doi={},
+}
+
+@INPROCEEDINGS{Kamburugamuve2016, 
+author={S. Kamburugamuve and S. Ekanayake and M. Pathirage and G. Fox}, 
+booktitle={2016 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW)}, 
+title={Towards High Performance Processing of Streaming Data in Large Data Centers}, 
+year={2016}, 
+volume={}, 
+number={}, 
+pages={1637-1644}, 
+doi={10.1109/IPDPSW.2016.103}, 
+ISSN={}, 
+publisher = "IEEE",
+address = "Chicago, USA",
+month={May},}
+
+@book{McCool:2012,
+ author = {McCool, Michael and Reinders, James and Robison, Arch},
+ title = {Structured Parallel Programming: Patterns for Efficient Computation},
+ year = {2012},
+ isbn = {9780123914439, 9780124159938},
+ edition = {1st},
+ publisher = {Morgan Kaufmann Publishers Inc.},
+ address = {San Francisco, CA, USA},
+} 
+
+@book{MPI:2014,
+ author = {Gropp, William and Lusk, Ewing and Skjellum, Anthony},
+ title = {Using MPI: Portable Parallel Programming with the Message-Passing Interface},
+ year = {2014},
+ isbn = {0262527391, 9780262527392},
+ publisher = {The MIT Press},
+ address = "Massachusetts, USA"
+} 
+
+@book{OpenMP:2001,
+ author = {Chandra, Robit and Dagum, Leonardo and Kohr, Dave and Maydan, Dror and McDonald, Jeff and Menon, Ramesh},
+ title = {Parallel Programming in OpenMP},
+ year = {2001},
+ isbn = {1-55860-671-8, 9781558606715},
+ publisher = {Morgan Kaufmann Publishers Inc.},
+ address = {San Francisco, CA, USA},
+} 
+
+@inproceedings{Cappello:2000,
+ author = {Cappello, Franck and Etiemble, Daniel},
+ title = {MPI Versus MPI+OpenMP on IBM SP for the NAS Benchmarks},
+ booktitle = {Proceedings of the 2000 ACM/IEEE Conference on Supercomputing},
+ series = {SC '00},
+ year = {2000},
+ isbn = {0-7803-9802-5},
+ pages={12-12}, 
+ location = {Dallas, Texas, USA}, 
+ url = {http://dl.acm.org/citation.cfm?id=370049.370071},
+ acmid = {370071},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+} 
+
+@Article{Ernstsson2018,
+author="Ernstsson, August and Li, Lu and Kessler, Christoph",
+title="SkePU 2: Flexible and Type-Safe Skeleton Programming for Heterogeneous Parallel Systems",
+journal="International Journal of Parallel Programming",
+year="2018",
+month="Feb",
+day="01",
+volume="46",
+number="1",
+pages="62--80",
+issn="1573-7640",
+doi="10.1007/s10766-017-0490-5",
+url="https://doi.org/10.1007/s10766-017-0490-5"
+}
+
+%%%%%%%%%%%
+% Estado del arte %
+%%%%%%%%%%%
+
+@inproceedings{sharedVsMpi,
+  title={Message-passing and shared-data programming models-wish vs. reality},
+  author={Sodan, Angela C},
+  booktitle={High Performance Computing Systems and Applications, 2005. HPCS 2005. 19th International Symposium on},
+  pages={131--139},
+  year={2005},
+  organization={IEEE}
+}
+
+@inproceedings{gharachorloo1990memory,
+  title={Memory consistency and event ordering in scalable shared-memory multiprocessors},
+  author={Gharachorloo, Kourosh and Lenoski, Daniel and Laudon, James and Gibbons, Phillip and Gupta, Anoop and Hennessy, John},
+  booktitle={Computer Architecture, 1990. Proceedings., 17th Annual International Symposium on},
+  pages={15--26},
+  year={1990},
+  organization={IEEE}
+}
+
+@inproceedings{cacheprotocol,
+  title={The directory-based cache coherence protocol for the DASH multiprocessor},
+  author={Lenoski, Daniel and Laudon, James and Gharachorloo, Kourosh and Gupta, Anoop and Hennessy, John},
+  booktitle={Computer Architecture, 1990. Proceedings., 17th Annual International Symposium on},
+  pages={148--159},
+  year={1990},
+  organization={IEEE}
+}
+
+@article{nitzberg1991distributed,
+  title={Distributed shared memory: A survey of issues and algorithms},
+  author={Nitzberg, Bill and Lo, Virginia},
+  journal={Computer},
+  volume={24},
+  number={8},
+  pages={52--60},
+  year={1991},
+  publisher={IEEE}
+}
+
+@inproceedings{hammond2004transactional,
+  title={Transactional memory coherence and consistency},
+  author={Hammond, Lance and Wong, Vicky and Chen, Mike and Carlstrom, Brian D and Davis, John D and Hertzberg, Ben and Prabhu, Manohar K and Wijaya, Honggo and Kozyrakis, Christos and Olukotun, Kunle},
+  booktitle={ACM SIGARCH Computer Architecture News},
+  volume={32},
+  number={2},
+  pages={102},
+  year={2004},
+  organization={IEEE Computer Society}
+}
+
+@inproceedings{bertogna2007response,
+  title={Response-time analysis for globally scheduled symmetric multiprocessor platforms},
+  author={Bertogna, Marko and Cirinei, Michele},
+  booktitle={Real-Time Systems Symposium, 2007. RTSS 2007. 28th IEEE International},
+  pages={149--160},
+  year={2007},
+  organization={IEEE}
+}
+
+@article{numa,
+  title={Numa (non-uniform memory access): An overview},
+  author={Lameter, Christoph},
+  journal={Queue},
+  volume={11},
+  number={7},
+  pages={40},
+  year={2013},
+  publisher={ACM}
+}
+
+@book{kleiman1996programming,
+  title={Programming with threads},
+  author={Kleiman, Steve and Shah, Devang and Smaalders, Bart},
+  year={1996},
+  publisher={Sun Soft Press Mountain View}
+}
+
+@article{rogers2013amd,
+  title={Amd heterogeneous uniform memory access},
+  author={Rogers, Phil and FELLOW, CORPORATE},
+  journal={AMD Whitepaper},
+  year={2013}
+}
+
+@book{reinders2007intel,
+  title={Intel threading building blocks: outfitting C++ for multi-core processor parallelism},
+  author={Reinders, James},
+  year={2007},
+  publisher={" O'Reilly Media, Inc."}
+}
+
+@article{inteltbb2008,
+  title={Intel{\textregistered} threading building blocks},
+  author={Pheatt, Chuck},
+  journal={Journal of Computing Sciences in Colleges},
+  volume={23},
+  number={4},
+  pages={298--298},
+  year={2008},
+  publisher={Consortium for Computing Sciences in Colleges}
+}
+
+@article{multicorestate,
+  title={State-of-the-art in Parallel Computing with R},
+  author={Schmidberger, Markus and Morgan, Martin and Eddelbuettel, Dirk and Yu, Hao and Tierney, Luke and Mansmann, Ulrich},
+  journal={Journal of Statistical Software},
+  volume={47},
+  number={1},
+  year={2009}
+}
+
+@book{tanenbaum2007distributed,
+  title={Distributed systems: principles and paradigms},
+  author={Tanenbaum, Andrew S and Van Steen, Maarten},
+  year={2007},
+  publisher={Prentice-Hall}
+}
+
+@article{bal1998approaches,
+  title={Approaches for integrating task and data parallelism},
+  author={Bal, Henri E and Haines, Matthew},
+  journal={IEEE concurrency},
+  number={3},
+  pages={74--84},
+  year={1998},
+  publisher={IEEE}
+}
+
+@inproceedings{lee2012early,
+  title={Early evaluation of directive-based GPU programming models for productive exascale computing},
+  author={Lee, Seyong and Vetter, Jeffrey S},
+  booktitle={High Performance Computing, Networking, Storage and Analysis (SC), 2012 International Conference for},
+  pages={1--11},
+  year={2012},
+  organization={IEEE}
+}
+
+@inproceedings{ompMPIcodeGeneration,
+ author = {Hamidouche, Khaled and Falcou, Joel and Etiemble, Daniel},
+ title = {A Framework for an Automatic Hybrid MPI+OpenMP Code Generation},
+ booktitle = {Proceedings of the 19th High Performance Computing Symposia},
+ series = {HPC '11},
+ year = {2011},
+ location = {Boston, Massachusetts},
+ pages = {48--55},
+ numpages = {8},
+ url = {http://dl.acm.org/citation.cfm?id=2048577.2048584},
+ acmid = {2048584},
+ publisher = {Society for Computer Simulation International},
+ address = {San Diego, CA, USA},
+ keywords = {MPI, MPI+OpenMP, OpenMP, bulk synchronous parallelism, generic programming, performance prediction},
+} 
+
+@inproceedings{rekimoto1999augmented,
+  title={Augmented surfaces: a spatially continuous work space for hybrid computing environments},
+  author={Rekimoto, Jun and Saitoh, Masanori},
+  booktitle={Proceedings of the SIGCHI conference on Human Factors in Computing Systems},
+  pages={378--385},
+  year={1999},
+  organization={ACM}
+}
+
+@inproceedings{rabenseifner2009hybrid,
+  title={Hybrid MPI/OpenMP parallel programming on clusters of multi-core SMP nodes},
+  author={Rabenseifner, Rolf and Hager, Georg and Jost, Gabriele},
+  booktitle={Parallel, Distributed and Network-based Processing, 2009 17th Euromicro International Conference on},
+  pages={427--436},
+  year={2009},
+  organization={IEEE}
+}
+
+@misc{hagersten1999multiprocessing,
+  title={Multiprocessing computer system employing local and global address spaces and COMA and NUMA access modes},
+  author={Hagersten, Erik E and Loewenstein, Paul N},
+  year={1999},
+  month=mar # "~23",
+  publisher={Google Patents},
+  note={US Patent 5,887,138}
+}
+
+@book{nichols1996pthreads,
+  title={Pthreads programming: A POSIX standard for better multiprocessing},
+  author={Nichols, Bradford and Buttlar, Dick and Farrell, Jacqueline and Farrell, Jackie},
+  year={1996},
+  publisher={" O'Reilly Media, Inc."}
+}
+
+article{dagum1998openmp,
+  title={OpenMP: an industry standard API for shared-memory programming},
+  author={Dagum, Leonardo and Menon, Ramesh},
+  journal={IEEE computational science and engineering},
+  volume={5},
+  number={1},
+  pages={46--55},
+  year={1998},
+  publisher={IEEE}
+}
+
+@book{blumofe1995cilk,
+  title={Cilk: An efficient multithreaded runtime system},
+  author={Blumofe, Robert D and Joerg, Christopher F and Kuszmaul, Bradley C and Leiserson, Charles E and Randall, Keith H and Zhou, Yuli},
+  volume={30},
+  number={8},
+  year={1995},
+  publisher={ACM}
+}
+
+@article{robison2012cilk,
+  title={Cilk plus: Language support for thread and vector parallelism},
+  author={Robison, Arch D},
+  journal={Talk at HP-CAST},
+  volume={18},
+  pages={25},
+  year={2012}
+}
+
+@book{gropp1999using,
+  title={Using MPI: portable parallel programming with the message-passing interface},
+  author={Gropp, William D and Gropp, William and Lusk, Ewing and Skjellum, Anthony},
+  volume={1},
+  year={1999},
+  publisher={MIT press}
+}
+
+article{iqbal2015big,
+  title={Big data analysis: Apache storm perspective},
+  author={Iqbal, Muhammad Hussain and Soomro, Tariq Rahim},
+  journal={International journal of computer trends and technology},
+  volume={19},
+  number={1},
+  pages={9--14},
+  year={2015}
+}
+
+@book{white2012hadoop,
+  title={Hadoop: The definitive guide},
+  author={White, Tom},
+  year={2012},
+  publisher={" O'Reilly Media, Inc."}
+}
+
+@article{zaharia2016apache,
+  title={Apache spark: a unified engine for big data processing},
+  author={Zaharia, Matei and Xin, Reynold S and Wendell, Patrick and Das, Tathagata and Armbrust, Michael and Dave, Ankur and Meng, Xiangrui and Rosen, Josh and Venkataraman, Shivaram and Franklin, Michael J and others},
+  journal={Communications of the ACM},
+  volume={59},
+  number={11},
+  pages={56--65},
+  year={2016},
+  publisher={ACM}
+}
+
+@inproceedings{Uintah,
+ author = {Meng, Qingyu and Berzins, Martin and Schmidt, John},
+ title = {Using Hybrid Parallelism to Improve Memory Use in the Uintah Framework},
+ booktitle = {Proceedings of the 2011 TeraGrid Conference: Extreme Digital Discovery},
+ series = {TG '11},
+ year = {2011},
+ isbn = {978-1-4503-0888-5},
+ location = {Salt Lake City, Utah},
+ pages = {24:1--24:8},
+ articleno = {24},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/2016741.2016767},
+ doi = {10.1145/2016741.2016767},
+ acmid = {2016767},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Uintah, adaptive, hybrid parallelism, memory, parallel, scalability},
+} 
+
+@article{knem,
+  title={KNEM: A generic and scalable kernel-assisted intra-node MPI communication framework},
+  author={Goglin, Brice and Moreaud, St{\'e}Phanie},
+  journal={Journal of Parallel and Distributed Computing},
+  volume={73},
+  number={2},
+  pages={176--188},
+  year={2013},
+  publisher={Elsevier}
+}
+
+@inproceedings{GPUMPI,
+ author = {Miyoshi, Takefumi and Irie, Hidetsugu and Shima, Keigo and Honda, Hiroki and Kondo, Masaaki and Yoshinaga, Tsutomu},
+ title = {FLAT: A GPU Programming Framework to Provide Embedded MPI},
+ booktitle = {Proceedings of the 5th Annual Workshop on General Purpose Processing with Graphics Processing Units},
+ series = {GPGPU-5},
+ year = {2012},
+ isbn = {978-1-4503-1233-2},
+ location = {London, United Kingdom},
+ pages = {20--29},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/2159430.2159433},
+ doi = {10.1145/2159430.2159433},
+ acmid = {2159433},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {GPGPU, MPI, cluster system, programming framework},
+} 
+
+@inproceedings{ASUKA,
+ author = {Shimokawabe, Takashi and Aoki, Takayuki and Onodera, Naoyuki},
+ title = {High-productivity Framework on GPU-rich Supercomputers for Operational Weather Prediction Code ASUCA},
+ booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},
+ series = {SC '14},
+ year = {2014},
+ isbn = {978-1-4799-5500-8},
+ location = {New Orleans, Louisana},
+ pages = {251--261},
+ numpages = {11},
+ url = {https://doi.org/10.1109/SC.2014.26},
+ doi = {10.1109/SC.2014.26},
+ acmid = {2683622},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+} 
+
+@article{Fastflow,
+  title={Fastflow: high-level and efficient streaming on multi-core},
+  author={Aldinucci, Marco and Danelutto, Marco and Kilpatrick, Peter and Torquati, Massimo},
+  journal={Programming multi-core and many-core computing systems, parallel and distributed computing},
+  year={2013}
+}
+
+@inbook{Aldinucci12fastflow:high-level,
+author = {Aldinucci Marco and Danelutto Marco and Kilpatrick Peter and Torquati Massimo},
+publisher = {Wiley-Blackwell},
+isbn = {9781119332015},
+title = {Fastflow: High‐Level and Efficient Streaming on Multicore},
+booktitle = {Programming multi‐core and many‐core computing systems},
+chapter = {13},
+pages = {261-280},
+doi = {10.1002/9781119332015.ch13},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/9781119332015.ch13},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119332015.ch13},
+year = {2017},
+}
+
+@InProceedings{Thies2002,
+author="Thies, William
+and Karczmarek, Michal
+and Amarasinghe, Saman",
+editor="Horspool, R. Nigel",
+title="StreamIt: A Language for Streaming Applications",
+booktitle="Compiler Construction",
+year="2002",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="179--196",
+isbn="978-3-540-45937-8"
+}
+
+@inproceedings{Peng:2015,
+ author = {Peng, Ivy Bo and Markidis, Stefano and Laure, Erwin and Holmes, Daniel and Bull, Mark},
+ title = {A Data Streaming Model in MPI},
+ booktitle = {Proceedings of the 3rd Workshop on Exascale MPI},
+ series = {ExaMPI '15},
+ year = {2015},
+ isbn = {978-1-4503-3998-8},
+ location = {Austin, Texas},
+ pages = {2:1--2:10},
+ articleno = {2},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/2831129.2831131},
+ doi = {10.1145/2831129.2831131},
+ acmid = {2831131},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {HPC, MPI, data-intensive, streaming model},
+} 
+
+@article{peng2017,
+  author    = {Ivy Bo Peng and
+               Stefano Markidis and
+               Roberto Gioiosa and
+               Gokcen Kestor and
+               Erwin Laure},
+  title     = {{MPI} Streams for {HPC} Applications},
+  journal   = {CoRR},
+  volume    = {abs/1708.01306},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1708.01306},
+  archivePrefix = {arXiv},
+  eprint    = {1708.01306},
+}
+
+@article{Loogen:2005,
+ author = {Loogen, Rita and Ortega-mall{\'e}n, Yolanda and Pe\~{n}a-mar\'{\i}, Ricardo},
+ title = {Parallel Functional Programming in Eden},
+ journal = {J. Funct. Program.},
+ issue_date = {May 2005},
+ volume = {15},
+ number = {3},
+ month = may,
+ year = {2005},
+ issn = {0956-7968},
+ pages = {431--475},
+ numpages = {45},
+ articleno = {-},
+ url = {https://doi.org/10.1017/S0956796805005526},
+ doi = {10.1017/S0956796805005526},
+ acmid = {1067409},
+ publisher = {Cambridge University Press},
+ address = {New York, NY, USA},
+} 
+
+@INPROCEEDINGS{Ferreira:2006, 
+author={J. F. Ferreira and J. L. Sobral and A. J. Proenca}, 
+booktitle={Cluster Computing and the Grid, 2006. CCGRID 06. Sixth IEEE International Symposium on}, 
+title={JaSkel: a Java skeleton-based framework for structured cluster and grid computing}, 
+year={2006}, 
+volume={1}, 
+number={}, 
+pages={4 pp.-304}, 
+keywords={Java;grid computing;workstation clusters;JaSkel;Java abstract classes;Java skeleton-based framework;cluster computing;grid application;grid computing;parallel application;skeleton catalogue;Computer architecture;Grid computing;Java;Lithium;Multicore processing;Parallel processing;Pipelines;Programming profession;Runtime environment;Skeleton}, 
+doi={10.1109/CCGRID.2006.65}, 
+ISSN={}, 
+publisher = "IEEE",
+address = "Singapore",
+month={May},
+}
+
+@inproceedings{Matsuzaki:2006,
+ author = {Matsuzaki, Kiminori and Iwasaki, Hideya and Emoto, Kento and Hu, Zhenjiang},
+ title = {A Library of Constructive Skeletons for Sequential Style of Parallel Programming},
+ booktitle = {Proceedings of the 1st International Conference on Scalable Information Systems},
+ series = {InfoScale '06},
+ year = {2006},
+ isbn = {1-59593-428-6},
+ location = {Hong Kong},
+ articleno = {13},
+
+ url = {http://doi.acm.org/10.1145/1146847.1146860},
+ doi = {10.1145/1146847.1146860},
+ acmid = {1146860},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@techreport{Ciechanowicz2009nster,
+address = {M\"{u}nster},
+author = {Philipp Ciechanowicz and Michael Poldner and Herbert Kuchen},
+copyright = {http://www.econstor.eu/dspace/Nutzungsbedingungen},
+keywords = {650},
+language = {eng},
+number = {7},
+institution = {Westf. Wilhelms-Univ.},
+title = {The M\"{u}nster Skeleton Library Muesli: A comprehensive overview},
+type = {Working Papers, ERCIS - European Research Center for Information Systems},
+url = {http://hdl.handle.net/10419/58419},
+year = {2009}
+}
+
+@INPROCEEDINGS{dash2016, 
+author={K. Fuerlinger and T. Fuchs and R. Kowalewski}, 
+booktitle={2016 IEEE 18th International Conference on High Performance Computing and Communications; IEEE 14th International Conference on Smart City; IEEE 2nd International Conference on Data Science and Systems (HPCC/SmartCity/DSS)}, 
+title={DASH: A C++ PGAS Library for Distributed Data Structures and Parallel Algorithms}, 
+year={2016}, 
+volume={}, 
+number={}, 
+pages={983-990}, 
+doi={10.1109/HPCC-SmartCity-DSS.2016.0140}, 
+ISSN={}, 
+publisher = "IEEE",
+address = "Sydney, Australia",
+month={Dec},}
+
+@article{Alba2007,
+ author = {Alba, Enrique and Luque, Gabriel and Garcia-Nieto, Jose and Ordonez, Guillermo and Leguizamon, Guillermo},
+ title = {{MALLBA: a Software Library to Design Efficient Optimisation Algorithms}},
+ journal = {Int. J. Innov. Comput. Appl.},
+ issue_date = {April 2007},
+ volume = {1},
+ number = {1},
+ month = apr,
+ year = {2007},
+ issn = {1751-648X},
+ pages = {74--85},
+ doi = {10.1504/IJICA.2007.013403},
+ acmid = {1359349},
+ publisher = {Inderscience Publishers},
+ address = {Inderscience Publishers, Geneva, SWITZERLAND},
+ keywords = {LANs, WANs, algorithmic skeletons, combinatorial optimisation, hybridisation, local area networks, metaheuristics, parallelism, scheduling, software design, software library, wide area networks},
+} 
+
+@inproceedings{luebke2008cuda,
+  title={CUDA: Scalable parallel programming for high-performance scientific computing},
+  author={Luebke, David},
+  booktitle={Biomedical Imaging: From Nano to Macro, 2008. ISBI 2008. 5th IEEE International Symposium on},
+  pages={836--838},
+  year={2008},
+  organization={IEEE}
+}
+
+@article{stone2010opencl,
+  title={OpenCL: A parallel programming standard for heterogeneous computing systems},
+  author={Stone, John E and Gohara, David and Shi, Guochun},
+  journal={Computing in science \& engineering},
+  volume={12},
+  number={3},
+  pages={66--73},
+  year={2010},
+  publisher={IEEE}
+}
+
+%%%%%%%
+% Patrones %
+%%%%%%%
+
+%%%%%%%
+% Interfaz %
+%%%%%%%
+
+@misc{boost-mpi,
+title = {{Boost MPI}},
+author= {Douglas Gregor and Matthias Troyer},
+year = 2017,
+url = {https://www.boost.org/doc/libs/1_65_0/doc/html/mpi.html},
+}
+
+%%%%%%%%
+% Evaluacion %
+%%%%%%%%
+
+@article{McCabe:1976,
+ author = {McCabe, T. J.},
+ title = {A Complexity Measure},
+ journal = {IEEE Trans. Softw. Eng.},
+ issue_date = {July 1976},
+ volume = {2},
+ number = {4},
+ month = jul,
+ year = {1976},
+ issn = {0098-5589},
+ pages = {308--320},
+ numpages = {13},
+ doi = {10.1109/TSE.1976.233837},
+ acmid = {1313586},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+ keywords = {Basis, complexity measure, control flow, decomposition, graph theory, independence, linear, modularization, programming, reduction, software, testing, testing, Basis, complexity measure, control flow, decomposition, graph theory, independence, linear, modularization, programming, reduction, software},
+} 
+
+@misc{lizard,
+    author = {{Terry Yin}},
+    title = {{Lizard: an Cyclomatic Complexity Analyzer Tool}},
+    howpublished = {\url{https://github.com/terryyin/lizard}},
+    note = {Online; accessed 5 May 2018},
+    year = {2018},
+}
+
+
+%%%%%%%%%
+% Planificacion %
+%%%%%%%%%
+
+%%%%%%%%%
+% Conclusiones %
+%%%%%%%%%
+@article{eurompi2018,
+  title={Supporting MPI-Distributed Stream Parallel Patterns in GrPPI},
+  author={Javier Fernández Muñoz and Manuel F. Dolz and David del Rio Astorga and Javier Prieto-Cepeda and J. Daniel García},
+  journal={EuroMPI},
+  year={2018},
+  month={September},
+  city={Barcelona},
+}
+

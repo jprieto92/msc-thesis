@@ -1,0 +1,51 @@
+\lhead[\thepage]{CAPÍTULO \thechapter. CONCLUSIONES Y TRABAJO FUTURO}
+\chead[]{}
+\rhead[Patrones de programación paralelos de alto nivel en arquitecturas de memoria distribuida\leftmark]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\lfoot[]{}
+\cfoot[]{}
+\rfoot[]{}
+\renewcommand{\footrulewidth}{0pt}
+
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{Conclusiones y trabajo futuro}
+\label{ch:conclusiones_trabajo_futuro}
+\markboth{}{CONCLUSIONES Y TRABAJO FUTURO}
+
+Este capítulo presenta las conclusiones de este proyecto y el trabajo futuro. En primer lugar se exponen las conclusiones y los resultados obtenidos (Sección \ref{sec:conclusiones}). Por último se expone el trabajo futuro a realizar en esta línea de investigación.
+
+\section{Conclusiones}
+\label{sec:conclusiones}
+
+En este trabajo, hemos ampliado \acrshort{grppi}, una interfaz de patrones paralelos genérica y reutilizable, con un nuevo back-end \acrshort{mpi}, que permite la ejecución de los patrones Pipeline y Farm en plataformas distribuidas. Para admitir escenarios híbridos, el back-end también combina una política de ejecución de memoria compartida intranodo que, si es necesario, se utiliza para ejecutar múltiples operadores de Pipeline y/o operadores de Farm dentro del mismo proceso \acrshort{mpi}. En general, el diseño compacto de \acrshort{grppi} facilita el desarrollo de aplicaciones de transmisión de datos, mejorando la flexibilidad y la portabilidad, a la vez que explota el paralelismo inter e intranodo.
+
+Como se demostró a lo largo de la evaluación experimental, el caso de uso de Mandelbrot, implementado con patrones de Pipeline y Farm distribuidos, logra ganancias de speedup considerables en comparación con la versión secuencial correspondiente. En cualquier caso, siempre es importante equilibrar las etapas de Pipeline de acuerdo con las cargas de trabajo de la etapa. También demostramos que el aprovechamiento de \acrshort{grppi} reduce considerablemente el número de LOCs y la complejidad ciclomática con respecto a la implementación utilizando directamente \acrshort{mpi}. Además, gracias a la comparación cualitativa de las dos interfaces de alto nivel, \acrshort{grppi} y \acrshort{mpi}, concluimos que \acrshort{grppi} conduce a códigos más estructurados y legibles, y por lo tanto, mejora su mantenibilidad general. En general, la implementación de un back-end distribuido mediante \acrshort{mpi} se ha motivado principalmente por las necesidades de escalamiento y el desarrollo de nuevos modelos de programación para aplicaciones científicas \acrshort{dasp}.  Además, nuestro interés con este back-end proviene de la amplia adopción de \acrshort{mpi} en las supercomputadoras de hoy, que actualmente no tiene soporte estándar para el procesamiento de streaming~\cite{peng2017}. Por estas razones, creemos que el back-end presentado puede ser de gran ayuda en el desarrollo de aplicaciones de streaming en C ++.
+
+Por lo tanto, podemos concluir que se han logrado los objetivos citados en comienzo del documento:
+
+\begin {itemize}
+\item \textbf{O1}: Hemos presentado una nueva política de ejecución de \acrshort{grppi}-MPI para entornos distribuidos e híbridos para los patrones paralelos \emph{Pipeline} y \emph{Farm}.
+\item \textbf{O2}: Se ha descrito el diseño de la interfaz \acrshort{grppi} y las políticas internas de \acrshort{mpi} para permitir la ejecución distribuida e híbrida de aplicaciones \acrshort{dasp}.
+\item \textbf{O3}: Se ha presentado un nuevo operador para patrones de \emph{streaming} que, como un contenedor, permite a los usuarios reemplazar la política de ejecución predeterminada de un patrón.
+\item \textbf{O4}: Hemos analizado la usabilidad del patrón en términos de líneas de código y complejidad ciclomática, y realizando una comparación \emph{side-by-side} de ambas interfaces de programación \acrshort{grppi} y \acrshort{mpi}.
+\item \textbf{O5}: Se han evaluado los patrones distribuidos \emph{Pipeline} y \emph{Farm} de \emph{streaming} desde los puntos de vista de usabilidad y rendimiento usando una aplicación que renderiza frames de Mandelbrot bajo diferentes configuraciones híbridas.
+\end {itemize}
+
+Además, este trabajo ha dado como resultado una publicación en la conferencia internacional EuroMPI 2018 que se celebrará en Septiembre en Barcelona (España).
+
+\begin{itemize}
+\item \textbf{Supporting \acrshort{mpi}-Distributed Stream Parallel Patterns in \acrshort{grppi}}\cite{eurompi2018}. \textit{Javier Fernández Muñoz, Manuel F. Dolz, David del Rio Astorga, Javier Prieto Cepeda and J. Daniel García}, EuroMPI 2018, Barcelona.
+\end{itemize}
+
+\section{Trabajo futuro}
+\label{sec:trabajo_futuro}
+
+Como trabajo futuro, planeamos admitir nuevos algoritmos para la distribución de operadores en procesos e introducir un nuevo operador para permitir a los usuarios reemplazar la política de ejecución predeterminada de un operador concreto en una etapa de Pipeline. También planeamos implementar otros patrones de streaming, como filter o Stream-Reduce, dentro de la política de ejecución de \acrshort{mpi} y mejorar las colas de comunicación para usar comunicaciones \acrshort{mpi} de un solo lado.
+
+\afterpage{\blankpage} % blank page

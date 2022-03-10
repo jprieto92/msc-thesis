@@ -1,0 +1,359 @@
+% -*- Mode:TeX -*-
+
+%% IMPORTANT: The official thesis specifications are available at:
+%%            http://libraries.mit.edu/archives/thesis-specs/
+%%
+%%            Please verify your thesis' formatting and copyright
+%%            assignment before submission.  If you notice any
+%%            discrepancies between these templates and the 
+%%            MIT Libraries' specs, please let us know
+%%            by e-mailing thesis@mit.edu
+
+%% The documentclass options along with the pagestyle can be used to generate
+%% a technical report, a draft copy, or a regular thesis.  You may need to
+%% re-specify the pagestyle after you \include  cover.tex.  For more
+%% information, see the first few lines of mitthesis.cls. 
+
+%\documentclass[12pt,vi,twoside]{mitthesis}
+%%
+%%  If you want your thesis copyright to you instead of MIT, use the
+%%  ``vi'' option, as above.
+%%
+%\documentclass[12pt,twoside,leftblank]{mitthesis}
+%%
+%% If you want blank pages before new chapters to be labelled ``This
+%% Page Intentionally Left Blank'', use the ``leftblank'' option, as
+%% above. 
+
+\documentclass[10.5pt,twoside]{mitthesis}
+\usepackage{lgrind, afterpage}
+\usepackage{fancyhdr}
+\usepackage[sc]{mathpazo}
+%% These have been added at the request of the MIT Libraries, because
+%% some PDF conversions mess up the ligatures.  -LB, 1/22/2014
+\usepackage{cmap}
+\usepackage{tabto}
+\usepackage[T1]{fontenc}
+%\usepackage[english]{babel}
+%\usepackage[spanish,es-tabla]{babel}
+\usepackage[spanish,es-tabla,es-nosectiondot]{babel} % spanish
+\usepackage{graphicx}
+\usepackage{appendix}
+\usepackage{eurosym}
+\usepackage{comment}
+\usepackage{subcaption}
+\usepackage{epigraph}
+\usepackage[export]{adjustbox}
+\usepackage{amsmath} % equations
+\usepackage{mathtools}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage[textfont=it]{caption}
+\usepackage[hidelinks]{hyperref}
+\usepackage[acronym]{glossaries}
+\usepackage[svgnames]{xcolor}
+\usepackage{array,booktabs,makecell,rotating,ragged2e} % nice tables
+\usepackage{pifont}	% check
+\usepackage{listings} % linux commands
+\usepackage[utf8]{inputenc}
+%\usepackage[demo]{graphicx}
+\makeglossaries
+\pagestyle{plain}
+
+\definecolor{mycolor}{gray}{0.15}  % Outer background color of 
+
+  \makeglossaries
+  
+% Traceability matrix
+\renewcommand*\theadfont{\bfseries}
+\settowidth\rotheadsize{\theadfont Infrastructure}
+\renewcommand\theadgape{}
+\renewcommand\theadalign{lc}
+\renewcommand\rotheadgape{}
+
+% START ALGORITHM
+
+\captionsetup{compatibility=false}
+
+\DeclareCaptionSubType*{algorithm}
+
+\renewcommand\thesubalgorithm{\thetable\alph{subalgorithm}}
+
+\DeclareCaptionLabelFormat{alglabel}{Algorithm~#2}
+
+% END ALGORITHM
+
+% epigraph
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
+
+\renewcommand{\listfigurename}{Lista de Figuras}
+\renewcommand{\listtablename}{Lista de Tablas}
+\renewcommand{\contentsname}{Lista de Contenidos}
+\renewcommand{\figurename}{\textbf{\textit{Figura}}}
+\renewcommand\bibname{Bibliografía}
+\renewcommand{\lstlistingname}{Listado}
+
+\renewcommand{\appendixname}{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixpagename}{Anexos}
+
+
+
+% pseudocode
+\makeatletter
+%\renewcommand{\ALG@name}{Pseudocode}
+\makeatother
+\renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}% Algorithm # is <chapter>.<algorithm>
+\makeatletter\@addtoreset{algorithm}{chapter}\makeatother
+\makeatletter
+\renewcommand{\ALG@beginalgorithmic}{\normalsize}
+\makeatother
+
+% xml
+\usepackage{color}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  commentstyle=\color{gray}\upshape
+}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type}% list your attributes here
+}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\newcommand{\nref}[1]{(\ref{#1})}
+\newcommand{\ivy}{{\sc Ivy\xspace}}
+
+\lstset{
+language=C++,
+ frame=lines,
+ basicstyle=\fontsize{7}{7}\ttfamily,
+ captionpos=t,
+ belowcaptionskip=\medskipamount,
+commentstyle=\color{mygreen},
+columns=fullflexible,
+numbers=left,
+numbersep=6pt,
+numberstyle=\tiny\color{mygray},
+keywordstyle=\color{mymagenta},
+stringstyle=\color{myred},
+breaklines=true,
+escapeinside={<@}{@>},
+emph={Farm,Pipeline,Accumulator,Filter,Map,Reduce,MapReduce,Stencil,DivideAndConquer}, 
+emphstyle=\color{blue},
+morekeywords={}
+}
+
+\newcommand{\rpr}{\textsc{Repara}\xspace}
+\newcommand{\rph}{\textsc{RePhrase}\xspace}
+\newcommand{\parboil}{\texttt{Parboil}\xspace}
+\newcommand{\rodinia}{\texttt{Rodinia}\xspace}
+\newcommand{\nas}{\texttt{NAS}\xspace}
+\newcommand{\bioperf}{\texttt{BioPerf}\xspace}
+\newcommand{\pipeline}{{\small\textsf{Pipeline}}\xspace}
+\newcommand{\farm}{{\small\textsf{Farm}}\xspace}
+\newcommand{\map}{{\small\textsf{Map}}\xspace}
+\newcommand{\reduce}{{\small\textsf{Reduce}}\xspace}
+\newcommand{\mapreduce}{{\small\textsf{MapReduce}}\xspace}
+\newcommand{\stencil}{{\small\textsf{Stencil}}\xspace}
+\newcommand{\filter}{{\small\textsf{Filter}}\xspace}
+\newcommand{\accum}{{\small\textsf{Accumulator}}\xspace}
+\newcommand{\dac}{{\small\textsf{Divide\&Conquer}}\xspace}
+\newcommand{\grppi}{\textsc{GrPPI}\xspace}
+\newcommand{\nfea}{\textsf{No-Factible}}%
+\newcommand{\feas}{\textsf{Factible}}%
+\newcommand{\usab}{\textsf{Usable-Reducible}}%
+\newcommand{\irre}{\textsf{Irreducible}}%
+\newcommand{\nfeas}{{\small\nfea}\xspace}%
+\newcommand{\feasi}{{\small\feas}\xspace}%
+\newcommand{\usabl}{{\small\usab}\xspace}%
+\newcommand{\irred}{{\small\irre}\xspace}%
+\newcommand{\nfeasm}{\xmark\ \tiny{(\nfea)}}%
+\newcommand{\feasim}{\cmark\ \tiny{(\feas)}}%
+\newcommand{\usablm}{\cmark\ \tiny{(\usab)}}%
+\newcommand{\irredm}{\cmark\ \tiny{(\irre)}}%
+
+\definecolor{mygray}{rgb}{0.4,0.4,0.4}
+\definecolor{mygreen}{rgb}{0.2,0.7,0.2}
+\definecolor{myorange}{rgb}{1.0,0.3,0}
+\definecolor{mymagenta}{rgb}{0.6,0,0.6}
+\definecolor{myred}{rgb}{0.8,0,0}
+
+\usepackage{etoolbox}
+
+% hyphenation
+\hyphenation {ma-yo-res}
+
+
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\makeatother
+
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% encabezados
+\lhead[\thepage]{\rightmark}
+\chead[]{}
+\rhead[Patrones de programación paralelos de alto nivel en arquitecturas de memoria distribuida\leftmark]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \newpage}
+
+% pie de pagina
+\lfoot[]{}
+\cfoot[]{}
+\rfoot[]{}
+\renewcommand{\footrulewidth}{0pt}
+
+% primera pagina de un capitulo
+\fancypagestyle{plain}{
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\cfoot{\thepage}
+}
+
+\pagestyle{fancy}
+
+% Authors margins
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+\include{glossary}
+\include{acronyms}
+
+% Acronyms
+
+%% This bit allows you to either specify only the files which you wish to
+%% process, or `all' to process all files which you \include.
+%% Krishna Sethuraman (1990).
+
+%\typein [\files]{Enter file names to process, (chap1,chap2 ...), or `all' to
+%process all files:}
+\def\all{all}
+%\ifx\files\all \typeout{Including all files.} \else \typeout{Including only \files.} \includeonly{\files} \fi
+
+\begin{document}
+\pagenumbering{roman} %
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+     
+        \Large
+        Universidad Carlos III de Madrid\\
+        Escuela Politécnica Superior\\
+        Máster en Ciencia y Tecnología Informática
+        
+        \vspace{0.3cm}
+        
+        \centering        
+        \includegraphics[width=0.6\textwidth]{figures/uc3m}
+        
+        \vspace{0.6cm}
+        
+        \LARGE
+        Trabajo Fin de Máster
+        
+        \Huge
+        %\textbf{A Complete Simulator for Volunteer Computing Environments}
+		\textbf{Patrones de programación paralelos\\de alto nivel en arquitecturas\\de memoria distribuida}        
+        
+        \vspace{0.5cm}
+        
+        \vspace{1.5cm}
+        
+        \Large
+        \begin{changemargin}{3.8cm}{3.8cm}
+        Autor:\hfill Javier Prieto Cepeda\\
+        Director:\hfill Javier Fernández Muñoz\\
+        %Codirector:\hfill Manuel Dolz Zaragozá\\
+        \end{changemargin}
+		\begin{changemargin}{3.8cm}{3.8cm}
+		\begin{flushright}		        
+        \vspace{0.5cm}
+        Leganés, Madrid, España\\
+        Septiembre 2018
+ 		\end{flushright}
+        \end{changemargin}
+        
+        \vfill
+        
+    \end{center}
+\end{titlepage}
+
+\include{cover}
+% Some departments (e.g. 5) require an additional signature page.  See
+% signature.tex for more information and uncomment the following line if
+% applicable.
+% \include{signature}
+\pagestyle{plain}
+\include{contents}
+\pagenumbering{arabic}
+
+\include{chap1}
+\include{chap2}
+\include{chap3}
+\include{chap4}
+\include{chap5}
+\include{chap6}
+\include{chap7}
+
+%\include{appendixa}
+
+%\printglossary[type=\acronymtype,title=Abbreviations]
+%\printglossary
+
+%Some text between the list of acronyms and the glossary.
+
+%\printglossary
+%\addcontentsline{toc}{chapter}{Glossary}
+
+%\printglossary
+%\addcontentsline{toc}{chapter}{Glosario}
+
+\printglossary[type=\acronymtype,title={Acrónimos}]
+\addcontentsline{toc}{chapter}{Acrónimos}
+
+
+%\printglossary[type=\acronymtype]
+%\addcontentsline{toc}{chapter}{Acronyms}
+
+\afterpage{\blankpage} % blank page
+
+\cleardoublepage
+\phantomsection
+\include{biblio}
+
+\afterpage{\blankpage} % blank page
+\clearpage
+
+\end{document}

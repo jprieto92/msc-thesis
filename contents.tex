@@ -1,0 +1,48 @@
+% -*- Mode:TeX -*-
+%% This file simply contains the commands that actually generate the table of
+%% contents and lists of figures and tables.  You can omit any or all of
+%% these files by simply taking out the appropriate command.  For more
+%% information on these files, see appendix C.3.3 of the LaTeX manual. 
+\lhead[\thepage]{ÍNDICE}
+\chead[]{}
+\rhead[Patrones de programación paralelos de alto nivel en arquitecturas de memoria distribuida]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\lfoot[]{}
+\cfoot[]{}
+\rfoot[]{}
+\renewcommand{\footrulewidth}{0pt}
+\tableofcontents
+\addcontentsline{toc}{chapter}{Contenidos}
+\markboth{}{ÍNDICE}
+
+\clearpage
+\afterpage{\blankpage} % blank page
+%\blankpage
+
+%\begin{comment}
+\lhead[\thepage]{ÍNDICE DE FIGURAS}
+\chead[]{}
+\rhead[Patrones de programación paralelos de alto nivel en arquitecturas de memoria distribuida\leftmark]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\lfoot[]{}
+\cfoot[]{}
+\rfoot[]{}
+\renewcommand{\footrulewidth}{0pt}
+\listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename}
+\markboth{}{ÍNDICE DE FIGURAS}
+
+\lhead[\thepage]{ÍNDICE DE TABLAS}
+\chead[]{}
+\rhead[Patrones de programación paralelos de alto nivel en arquitecturas de memoria distribuida\leftmark]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\lfoot[]{}
+\cfoot[]{}
+\rfoot[]{}
+\renewcommand{\footrulewidth}{0pt}
+\listoftables
+\addcontentsline{toc}{chapter}{\listtablename}
+\markboth{}{ÍNDICE DE TABLAS}
+
+\afterpage{\blankpage} % blank page
+%\end{comment}
